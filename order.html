@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Habibi Biriyani</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Habibi Biriyani</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="order.html" class="nav-link active">Order</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <button class="login-btn" onclick="showLoginModal()">Login</button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Order Section -->
+    <section class="order-section" style="padding-top: 120px;">
+        <div class="container">
+            <h2 class="section-title">Place Your Pre-Order</h2>
+            <form id="orderForm" class="order-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Contact Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Delivery Address *</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="deliveryDate">Delivery Date *</label>
+                    <input type="date" id="deliveryDate" name="deliveryDate" required>
+                </div>
+                
+                <div class="menu-selection">
+                    <h3>Select Your Items</h3>
+                    <div class="item-selection">
+                        <div class="item">
+                            <label>
+                                <input type="checkbox" name="items" value="chicken" data-price="850">
+                                Chicken Biriyani Bucket - ₹850 (Serves 4-5 people)
+                            </label>
+                            <input type="number" name="chicken_qty" min="0" max="10" value="0" class="qty-input">
+                        </div>
+                        <div class="item">
+                            <label>
+                                <input type="checkbox" name="items" value="mutton" data-price="1800">
+                                Mutton Biriyani Bucket - ₹1800
+                            </label>
+                            <input type="number" name="mutton_qty" min="0" max="10" value="0" class="qty-input">
+                        </div>
+                        <div class="item">
+                            <label>
+                                <input type="checkbox" name="items" value="veg" data-price="650">
+                                Veg Biriyani - ₹650
+                            </label>
+                            <input type="number" name="veg_qty" min="0" max="10" value="0" class="qty-input">
+                        </div>
+                        <div class="item">
+                            <label>
+                                <input type="checkbox" name="items" value="ghee" data-price="120">
+                                Ghee Rice - ₹120
+                            </label>
+                            <input type="number" name="ghee_qty" min="0" max="10" value="0" class="qty-input">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">Special Instructions (Optional)</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Spice level, extra raita, etc."></textarea>
+                </div>
+                
+                <div class="total-section">
+                    <h3>Total Amount: <span id="totalAmount">₹0</span></h3>
+                </div>
+                
+                <button type="submit" class="submit-btn">Confirm Order</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Habibi Biriyani</h3>
+                    <p>A Taste of Tradition in Every Bucket</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@habibibiriyani.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Habibi Biriyani. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <div class="login-container">
+                <h2>Welcome to Habibi Biriyani</h2>
+                <div class="login-tabs">
+                    <button class="tab-btn active" onclick="switchTab('customer')">Customer</button>
+                    <button class="tab-btn" onclick="switchTab('admin')">Admin</button>
+                </div>
+                
+                <form id="customerLoginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="customerEmail">Email</label>
+                        <input type="email" id="customerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPassword">Password</label>
+                        <input type="password" id="customerPassword" required>
+                    </div>
+                    <button type="submit" class="login-submit-btn">Login</button>
+                    <p class="signup-link">Don't have an account? <a href="#" onclick="showSignupForm()">Sign up</a></p>
+                </form>
+                
+                <form id="adminLoginForm" class="login-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="adminEmail">Admin Email</label>
+                        <input type="email" id="adminEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPassword">Admin Password</label>
+                        <input type="password" id="adminPassword" required>
+                    </div>
+                    <button type="submit" class="login-submit-btn">Admin Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <div class="order-confirmation">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h2>Thank You!</h2>
+                <p>Your order has been confirmed successfully.</p>
+                <p>Order ID: <span id="orderId"></span></p>
+                <p>We'll contact you soon with delivery details.</p>
+                <button onclick="closeOrderModal()" class="close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

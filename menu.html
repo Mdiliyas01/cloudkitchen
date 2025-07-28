@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Habibi Biriyani</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Habibi Biriyani</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link active">Menu</a>
+                <a href="order.html" class="nav-link">Order</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <button class="login-btn" onclick="showLoginModal()">Login</button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Section -->
+    <section class="menu-section" style="padding-top: 120px;">
+        <div class="container">
+            <h2 class="section-title">Our Traditional Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Chicken Biriyani">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Chicken Biriyani Bucket</h3>
+                        <p>Serves 4-5 people with aromatic spices and tender chicken</p>
+                        <div class="price">₹850</div>
+                        <div class="serving-info">Serves 4-5 people</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mutton Biriyani">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Mutton Biriyani Bucket</h3>
+                        <p>Rich and flavorful mutton biriyani with traditional spices</p>
+                        <div class="price">₹1800</div>
+                        <div class="serving-info">Premium quality mutton</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Veg Biriyani">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Veg Biriyani</h3>
+                        <p>Delicious vegetarian biriyani with fresh vegetables</p>
+                        <div class="price">₹650</div>
+                        <div class="serving-info">Fresh vegetables</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Ghee Rice">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Ghee Rice</h3>
+                        <p>Fragrant basmati rice cooked in pure ghee</p>
+                        <div class="price">₹120</div>
+                        <div class="serving-info">Perfect accompaniment</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-cta">
+                <h3>Ready to Order?</h3>
+                <p>Experience the authentic taste of South Indian biriyani</p>
+                <a href="order.html" class="cta-btn">Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Habibi Biriyani</h3>
+                    <p>A Taste of Tradition in Every Bucket</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@habibibiriyani.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Habibi Biriyani. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <div class="login-container">
+                <h2>Welcome to Habibi Biriyani</h2>
+                <div class="login-tabs">
+                    <button class="tab-btn active" onclick="switchTab('customer')">Customer</button>
+                    <button class="tab-btn" onclick="switchTab('admin')">Admin</button>
+                </div>
+                
+                <form id="customerLoginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="customerEmail">Email</label>
+                        <input type="email" id="customerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPassword">Password</label>
+                        <input type="password" id="customerPassword" required>
+                    </div>
+                    <button type="submit" class="login-submit-btn">Login</button>
+                    <p class="signup-link">Don't have an account? <a href="#" onclick="showSignupForm()">Sign up</a></p>
+                </form>
+                
+                <form id="adminLoginForm" class="login-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="adminEmail">Admin Email</label>
+                        <input type="email" id="adminEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPassword">Admin Password</label>
+                        <input type="password" id="adminPassword" required>
+                    </div>
+                    <button type="submit" class="login-submit-btn">Admin Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

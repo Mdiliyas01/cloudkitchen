@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habibi Biriyani - A Taste of Tradition</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Habibi Biriyani</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="home.html" class="nav-link active">Home</a>
+                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="order.html" class="nav-link">Order</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <button class="login-btn" onclick="showLoginModal()">Login</button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Habibi Biriyani</h1>
+            <p class="hero-tagline">A Taste of Tradition in Every Bucket</p>
+            <p class="hero-quote">Where every grain tells a story of heritage</p>
+            <a href="order.html" class="cta-btn">Pre-Order Now</a>
+        </div>
+        <div class="hero-slideshow">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1563379091339-03246963d6a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Chicken Biriyani">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mutton Biriyani">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Veg Biriyani">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Habibi Biriyani</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>We bring you the authentic taste of traditional South Indian biriyani, crafted with love and the finest ingredients. Our recipes have been passed down through generations, ensuring every bite carries the essence of our heritage.</p>
+                    <p>From our kitchen to your table, we promise to deliver not just food, but an experience that connects you to the rich culinary traditions of South India.</p>
+                </div>
+                <div class="about-features">
+                    <div class="feature">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Fresh Ingredients</h4>
+                        <p>Only the finest and freshest ingredients</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-clock"></i>
+                        <h4>Pre-Order System</h4>
+                        <p>Order in advance for fresh preparation</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-truck"></i>
+                        <h4>Home Delivery</h4>
+                        <p>Convenient delivery to your doorstep</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Habibi Biriyani</h3>
+                    <p>A Taste of Tradition in Every Bucket</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@habibibiriyani.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Habibi Biriyani. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <div class="login-container">
+                <h2>Welcome to Habibi Biriyani</h2>
+                <div class="login-tabs">
+                    <button class="tab-btn active" onclick="switchTab('customer')">Customer</button>
+                    <button class="tab-btn" onclick="switchTab('admin')">Admin</button>
+                </div>
+                
+                <form id="customerLoginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="customerEmail">Email</label>
+                        <input type="email" id="customerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPassword">Password</label>
+                        <input type="password" id="customerPassword" required>
+                    </div>
+                    <button type="submit" class="login-submit-btn">Login</button>
+                    <p class="signup-link">Don't have an account? <a href="#" onclick="showSignupForm()">Sign up</a></p>
+                </form>
+                
+                <form id="adminLoginForm" class="login-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="adminEmail">Admin Email</label>
+                        <input type="email" id="adminEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPassword">Admin Password</label>
+                        <input type="password" id="adminPassword" required>
+                    </div>
+                    <button type="submit" class="login-submit-btn">Admin Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
