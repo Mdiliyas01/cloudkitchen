@@ -25,10 +25,17 @@ function initializeSlideshow() {
     const slides = document.querySelectorAll('.slide');
     if (slides.length === 0) return;
 
+    // Ensure first slide is visible
+    slides[0].classList.add('active');
+    
     function nextSlide() {
-        slides[currentSlide].classList.remove('active');
+        if (slides[currentSlide]) {
+            slides[currentSlide].classList.remove('active');
+        }
         currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
+        if (slides[currentSlide]) {
+            slides[currentSlide].classList.add('active');
+        }
     }
 
     // Change slide every 4 seconds
